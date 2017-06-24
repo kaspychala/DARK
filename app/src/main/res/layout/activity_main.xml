@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uam.krul.vetul.dark.MainActivity">
+
+    <Button
+        android:id="@+id/D"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D"
+        android:layout_above="@+id/start"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"/>
+
+    <Button
+        android:id="@+id/C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:layout_alignBaseline="@+id/D"
+        android:layout_alignBottom="@+id/D"
+        android:layout_toLeftOf="@+id/D" />
+
+    <Button
+        android:id="@+id/B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:layout_marginEnd="1dp"
+        android:layout_above="@+id/start"
+        android:layout_toRightOf="@+id/A" />
+
+    <Button
+        android:id="@+id/A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:layout_alignBaseline="@+id/B"
+        android:layout_alignBottom="@+id/B"
+        android:layout_alignStart="@+id/questionD"
+        android:layout_marginStart="5dp" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="START"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:text="Wciśnij start aby zacząć test!"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <TextView
+        android:id="@+id/questionA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="30dp"
+        android:text="A. "
+        android:layout_below="@+id/question"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/questionB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/questionA"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/questionA"
+        android:layout_marginTop="15dp"
+        android:text="B. " />
+
+    <TextView
+        android:id="@+id/questionC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/questionB"
+        android:layout_marginTop="15dp"
+        android:text="C. " />
+
+    <TextView
+        android:id="@+id/questionD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/questionC"
+        android:layout_marginTop="15dp"
+        android:text="D. " />
+
+    <ImageView
+        android:id="@+id/reactions"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/questionD"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/blank" />
+
+</RelativeLayout>
