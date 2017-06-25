@@ -26,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView questionD;
     private Button start;
     private TextView question;
-    private String questions[][] = new String[42][6];
+    private int maxQuestionNumber = 47;
+    private String questions[][] = new String[maxQuestionNumber][6];
     private Random generator = new Random();
-    private int random = generator.nextInt(42);
+    private int random = generator.nextInt(maxQuestionNumber);
     private String answer = "";
     private float score = 0;
     private boolean started=false;
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     if(questionNumber>15){
                         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
                         alertDialog.setTitle("Czy Vetul będzie zadowolony?");
-                        alertDialog.setMessage("Twój wynik to: "+(score/(questionNumber-1))*100+"%");
+                        alertDialog.setMessage("Twój wynik to: "+(score/(15))*100+"%");
                         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
@@ -95,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                                 });
                         alertDialog.show();
                         started=false;
-                        questionNumber = 0 ;
+                        questionNumber = 1 ;
                         score = 0;
                         image.setImageResource(R.drawable.blank);
                         A.setEnabled(false);
@@ -200,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
             questionD.setTextColor(Color.GREEN);
 
         }
-        random = generator.nextInt(42);
+        random = generator.nextInt(maxQuestionNumber);
         start.setEnabled(true);
         questionNumber++;
         if(questionNumber>15){
@@ -482,7 +483,7 @@ public class MainActivity extends AppCompatActivity {
             questions[29][2] = "b. W banku rejestrów, w cyklicznym rejestrze przesuwnym i w ALU";
             questions[29][3] = "c. ALU";
             questions[29][4] = "d. W cyklicznym rejestrze przesuwnym";
-            questions[29][5] = "c";
+            questions[29][5] = "b";
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////QUESTION 31
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -550,20 +551,20 @@ public class MainActivity extends AppCompatActivity {
             ///////QUESTION 38
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             questions[37][0] = "Ile bajtów w pamięci programu mikrokontrolera 8051 zajmuje rozkaz MOV R5, A ?";
-            questions[37][1] = "a. wyłącznie kod operacji (numer rozkazu) ";
-            questions[37][2] = "b. kod operacji oraz liczba ‘5’ ";
-            questions[37][3] = "c. kod operacji oraz adres rejestru R3 ";
-            questions[37][4] = "d. kod operacji, liczba ‘5’ oraz adres rejestru R3 ";
-            questions[37][5] = "b";
+            questions[37][1] = "a. 1";
+            questions[37][2] = "b. 2";
+            questions[37][3] = "c. 3";
+            questions[37][4] = "d. 4";
+            questions[37][5] = "a";
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////QUESTION 39
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             questions[38][0] = "Rozkaz ‘MOV 5, R3’ w pamięci programu mikrokontrolera 8051 zostanie zapisany jako: ";
-            questions[38][1] = "a. 1";
-            questions[38][2] = "b. 2";
-            questions[38][3] = "c. 3";
-            questions[38][4] = "d. 4";
-            questions[38][5] = "a";
+            questions[38][1] = "a. wyłącznie kod operacji (numer rozkazu) ";
+            questions[38][2] = "b. kod operacji oraz liczba ‘5’ ";
+            questions[38][3] = "c. kod operacji oraz adres rejestru R3 ";
+            questions[38][4] = "d. kod operacji, liczba ‘5’ oraz adres rejestru R3 ";
+            questions[38][5] = "b";
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////QUESTION 40
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -591,5 +592,50 @@ public class MainActivity extends AppCompatActivity {
             questions[41][3] = "c. zestaw bitów ustawiających priorytet przerwań od poszczególnych urządzeń ";
             questions[41][4] = "d. zestaw bitów włączających zezwolenia na przerwania od poszczególnych urządzeń ";
             questions[41][5] = "d";
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////QUESTION 43
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            questions[42][0] = "Jaki tryb adresowania jest realizowany w architekturze ARM?";
+            questions[42][1] = "a. natychmiastowe";
+            questions[42][2] = "b. bezpośrednie";
+            questions[42][3] = "c. z przesunięciem ";
+            questions[42][4] = "d. rejestrowe pośrednie ";
+            questions[42][5] = "b";
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////QUESTION 44
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            questions[43][0] = "Jaką magistralę danych wykorzystano w architekturze ARM?";
+            questions[43][1] = "a. Wspólna dla danych i adresów";
+            questions[43][2] = "b. Wspólna dla danych, adresów i sygnałów";
+            questions[43][3] = "c. Oddzielna dla danych i adresów";
+            questions[43][4] = "d. Oddzielna dla danych, adresów i sygnałów";
+            questions[43][5] = "a";
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////QUESTION 45
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            questions[44][0] = "Czego nie ma w mikrokontrolerze(lub mikroprocesor raczej o to chodzi), a jest w mikrokomputerze?";
+            questions[44][1] = "a. Jednostka ALU";
+            questions[44][2] = "b. Cykliczny rejestr przesuwny";
+            questions[44][3] = "c. Urządzenia We-Wy";
+            questions[44][4] = "d. Operator przerwań";
+            questions[44][5] = "c";
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////QUESTION 46
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            questions[45][0] = "Co umożliwia realizacja polecenia BX [rejestr] w ARM?";
+            questions[45][1] = "a. Przejście do procedury";
+            questions[45][2] = "b. Powrót z podprogramu";
+            questions[45][3] = "c. Zmianę adresu powrotu";
+            questions[45][4] = "d. Zmianę stanu stosu (coś takiego)";
+            questions[45][5] = "b";
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////QUESTION 47
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            questions[46][0] = "Jaki rozkaz w 8051 umożliwi zapisanie dwóch najmłodszych bitów akumulatora?";
+            questions[46][1] = "a. Iloczyn logiczny: ANL A, #11111100B";
+            questions[46][2] = "b. Iloczyn logiczny: ANL A, #00000011B";
+            questions[46][3] = "c. Suma logiczna: ORL A, #11111100B";
+            questions[46][4] = "d. Suma logiczna: ORL A, #00000011B";
+            questions[46][5] = "c";
     }
 }
